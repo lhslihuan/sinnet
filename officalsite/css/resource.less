@@ -1,0 +1,172 @@
+/**
+ *  main content styles,incluing banner, brief introductions etc.
+ */
+
+@logoImageRoot: "./images/logo-images/";
+.hide {
+  display: none
+}
+
+.fw {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: url(./images/banner/logo_banner@2x.png) center 0 no-repeat;
+  background-size: 1280px 400px;
+  height: 400px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 1280px;
+}
+.banner .wrapper .title {
+  margin-top: 256px;
+  margin-left: 210px;
+  font-size: 20px;
+  color: #fff;
+  line-height: 38px;
+  padding: 0;
+}
+.banner {
+  height: 400px;
+  background-color: #1392a3;
+}
+.ustackLogo {
+  margin: 110px auto 120px;
+  background: url("@{logoImageRoot}logo-logo.png") center center no-repeat;
+  height: 76px;
+}
+.colorContent {
+  clear: both;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 700px;
+  .colordef {
+    float: left;
+    line-height: 32px;
+    color: #252f3d;
+    font-size: 14px;
+    padding-left: 70px;
+    position: relative;
+    &:before {
+      position: absolute;
+      left: 0;
+      top: 10px;
+      content: "";
+      width: 50px;
+      height: 20px;
+      background-color: #00afc8;
+    }
+    p {
+      padding: 0;
+      margin: 0;
+    }
+    &.blue {
+      border-right: 1px solid #bbb;
+      margin-right: 100px;
+      padding-right: 30px;
+    }
+    &.black:before {
+      background-color: #000;
+    }
+  }
+}
+.colorBlock {
+  width: 1080px;
+  margin: 140px auto 0;
+  clear: both;
+  overflow: hidden;
+  >div {
+    margin-right: 60px;
+    width: 320px;
+    float: left;
+    .wp1 {
+      margin-bottom: 60px;
+      width: 318px;
+      height: 88px;
+      border: 1px solid #bbb;
+    }
+    .wp2 {
+      margin-bottom: 60px;
+      width: 318px;
+      height: 218px;
+      border: 1px solid #bbb;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    .attachments {
+      padding: 40px 0px;
+      border-top: 1px solid #bbb;
+      border-bottom: 1px solid #bbb;
+      text-align: center;
+      a {
+        font-size: 14px;
+        color: #00afc8;
+        &:active {
+          color: #0094ad;
+        }
+        &:hover {
+          color: #009eb9;
+        }
+      }
+    }
+  }
+  .colorBlock1 {
+    .wp1 {
+      background: url("@{logoImageRoot}logo-1.png") center center no-repeat;
+    }
+    .wp2 {
+      background: url("@{logoImageRoot}logo-01.png") center center no-repeat;
+    }
+  }
+  .colorBlock2 {
+    .wp1 {
+      border-color: #00afc8;
+      background: #00afc8 url("@{logoImageRoot}logo-2.png") center center no-repeat;
+    }
+    .wp2 {
+      border-color: #00afc8;
+      background: #00afc8 url("@{logoImageRoot}logo-02.png") center center no-repeat;
+    }
+  }
+  .colorBlock3 {
+    .wp1 {
+      border-color: #221E1F;
+      background: #221E1F url("@{logoImageRoot}logo-3.png") center center no-repeat;
+    }
+    .wp2 {
+      border-color: #221E1F;
+      background: #221E1F url("@{logoImageRoot}logo-03.png") center center no-repeat;
+    }
+  }
+}
+.attachment {
+  padding: 100px 0;
+  text-align: center;
+  a {
+    display: block;
+    background-color: #00afc8;
+    color: #fff;
+    font-weight: bold;
+    font-size: 26px;
+    width: 296px;
+    height: 62px;
+    line-height: 62px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .note {
+    margin-top: 50px;
+    font-size: 14px;
+    color: #252f3d;
+    line-height: 32px;
+    strong {
+      font-size: 14px;
+      color: #ffac2a;
+      font-weight: normal;
+    }
+  }
+}

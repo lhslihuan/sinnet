@@ -1,0 +1,28 @@
+.fw {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.wrapper {
+  position: relative;
+  left: 50%;
+  margin-left: -540px;
+  width: 1080px;
+}
+
+
+.banner {
+  height: 120px;
+  background: #007382 url(./images/blog-banner.png) 0 0 no-repeat;
+  background-size: 100% 100%;
+  background: none\9;
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/wp-content/uploads/2014/04/blog-banner.png', sizingMethod='scale');
+}
+
+.banner h6 {
+  margin: 0;
+  line-height: 120px;
+  font-size: 30px;
+  color: #fff;
+}

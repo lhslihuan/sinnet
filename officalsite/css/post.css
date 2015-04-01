@@ -1,0 +1,26 @@
+.fw {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.wrapper {
+  position: relative;
+  left: 50%;
+  margin-left: -540px;
+  width: 1080px;
+}
+
+
+.banner {
+  height: 140px;
+  background-color: #1392a3;
+  
+}
+
+.banner h6 {
+  margin: 0;
+  line-height: 140px;
+  font-size: 30px;
+  color: #fff;
+}

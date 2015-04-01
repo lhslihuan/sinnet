@@ -1,0 +1,85 @@
+(function(doc, win) {
+  'use strict';
+
+  // Banner animation
+  var cur_index = 0, // Indicate current screen index
+    isClickable = true,
+    screen_list = [$('.banner .layer-launch'), $('.banner .layer-open'), $('.banner .layer-private')],
+    cursors = $('.banner .cursor span');
+
+  function goToScreen(prev, next) {
+    isClickable = false; // Sync lock
+    // FadeOut current screen
+    screen_list[prev].removeClass('fadeIn').addClass('fadeOut');
+    if (prev === 0) {
+      screen_list[prev].find('.animated').removeClass('fadeInLeftBig').addClass('fadeOutLeftBig');
+    } else {
+      screen_list[prev].find('.animated').removeClass('fadeInRightBig').addClass('fadeOutRightBig');
+    }
+
+    screen_list[prev].one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+      isClickable = true;
+      screen_list[prev].addClass('hide');
+      screen_list[prev].find('.animated').removeClass('fadeOutRightBig');
+      screen_list[prev].find('.animated').removeClass('fadeOutLeftBig');
+
+    })
+
+    // FadeIn current screen
+    screen_list[next].removeClass('hide');
+    screen_list[next].removeClass('fadeOut').addClass('fadeIn');
+    if (next === 0) {
+      screen_list[next].find('.animated').addClass('fadeInLeftBig');
+    } else {
+      screen_list[next].find('.animated').addClass('fadeInRightBig');
+    }
+
+    // Change indicator
+    cursors.removeClass('selected');
+    cursors.eq(next).addClass('selected')
+
+  }
+
+  $('.banner .arrow-l').on('click', function() {
+    if (!isClickable) {
+      return;
+    }
+    var _prev = cur_index;
+    cur_index = (cur_index + 2) % 3;
+    goToScreen(_prev, cur_index);
+
+  })
+  $('.banner .arrow-r').on('click', function() {
+    if (!isClickable) {
+      return;
+    }
+    var _prev = cur_index;
+    cur_index = (cur_index + 1) % 3;
+    goToScreen(_prev, cur_index);
+  })
+
+  // Feature animation
+  var feature_index = 0;
+
+  function changePic(prev, next) {
+    $('.feature .icon-wp').removeClass('selected');
+    $('.feature .icon-wp').eq(next).addClass('selected');
+
+    $('.feature .legend').removeClass('em')
+    $('.feature .legend').eq(next).addClass('em');
+
+    $('.feature .pic-wp li').eq(next).removeClass('fadeOut').addClass('fadeIn').removeClass('hide');
+    $('.feature .pic-wp li').eq(prev).removeClass('fadeIn').addClass('fadeOut');
+
+  }
+
+  $('.feature .icon-wp').on('click', function() {
+    var _index = $('.feature .icon-wp').index($(this));
+    if (_index !== feature_index) {
+      changePic(feature_index, _index);
+      feature_index = _index;
+    }
+
+  })
+
+})(document, window);
